@@ -1,0 +1,172 @@
+.star-destroyer-container {
+    position: relative;
+    top: 80vh;
+    z-index: -1;
+  }
+
+  .star-destroyer {
+    position: absolute;
+    transform: translateX(-50%);
+    animation: moveStarDestroyer 20s linear infinite; /* Adjust the duration as needed */
+    animation-fill-mode: forwards; /* Keep the last frame of the animation */
+  }
+
+  .main-body {
+    width: 0;
+    height: 0;
+    border-left: 90px solid transparent; /* Slightly smaller tip */
+    border-right: 90px solid transparent; /* Slightly smaller tip */
+    border-bottom: 300px solid #333; /* Unchanged length for the main triangle */
+    position: relative;
+    z-index: 1; /* Higher z-index for the main body */
+  }
+
+  .back-triangle {
+    width: 0;
+    height: 0;
+    border-left: 90px solid transparent; /* Same width as the top triangle */
+    border-right: 90px solid transparent; /* Same width as the top triangle */
+    border-top: 30px solid #333; /* Shorter height for the back triangle */
+    position: absolute;
+    top: 300px; /* Position it at the bottom of the main triangle */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2; /* Higher z-index for the back triangle */
+  }
+
+  .engine-container {
+    display: flex;
+    justify-content: space-around;
+    position: absolute;
+    top: 300px; /* Adjust the distance from the top of the back triangle */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px; /* Total width of the engine container */
+    z-index: -1; /* Move the engines behind the back triangle */
+  }
+
+  .engine {
+    position: relative;
+    width: 40px;
+    height: 20px;
+    background-color: #666;
+    animation: engineAnimation 1s infinite alternate; /* Add animation to the engines */
+  }
+
+  .center-triangle {
+    width: 0;
+    height: 0;
+    border-left: 60px solid transparent; /* Adjust the width of the triangle */
+    border-right: 60px solid transparent; /* Adjust the width of the triangle */
+    border-bottom: 180px solid #555; /* Adjust the height and color of the triangle */
+    position: absolute;
+    top: 100px; /* Adjust the vertical position */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3; /* Higher z-index for the center triangle */
+  }
+
+  .bridge-rectangle {
+    width: 80px; /* Adjust the width of the bridge rectangle */
+    height: 40px; /* Adjust the height of the bridge rectangle */
+    background-color: #777; /* Color of the bridge rectangle */
+    position: absolute;
+    top: 240px; /* Adjust the vertical position */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 5; /* Higher z-index for the bridge rectangle */
+  }
+
+  .bridge-triangle {
+    width: 0;
+    height: 0;
+    border-left: 40px solid transparent; /* Adjust the width of the triangle */
+    border-right: 40px solid transparent; /* Adjust the width of the triangle */
+    border-bottom: 5px solid #777; /* Color of the triangle matching the bridge rectangle */
+    position: absolute;
+    top: 320px; /* Adjust the vertical position */
+    left: 50%;
+    transform: translateX(-50%) translateY(-40px) rotate(180deg); /* Position it above the bridge rectangle and rotate */
+    z-index: 6; /* Higher z-index for the bridge triangle */
+  }
+
+  .shield-generator {
+    width: 20px; /* Adjust the width of the shield generator */
+    height: 20px; /* Adjust the height of the shield generator */
+    background-color: #777; /* Color of the shield generator */
+    position: absolute;
+    top: 250px; /* Adjust the vertical position */
+    left: 40%;
+    transform: translateX(-50%);
+    border: 1px solid #333; /* Thin border matching the main body color */
+    border-radius: 50%; /* Make it circular */
+    z-index: 7; /* Higher z-index for the shield generator */
+  }
+
+  .shield-generator + .shield-generator {
+    left: calc(40% + 40px); /* Adjust the spacing between shield generators */
+  }
+
+  /*.laser-beam {
+    width: 5px; /* Adjust the width of the laser beam *//*
+    height: 60px; /* Adjust the height of the laser beam *//*
+    background-color: #0f0; /* Green color for the laser beam *//*
+    position: absolute;
+    top: 180px; /* Adjust the vertical position *//*
+    left: 60%;
+    transform: translateX(-50%);
+    animation: laserAnimation 1s linear infinite; /* Add animation to the laser beams *//*
+    z-index: 0; /* Higher z-index for the laser beams *//*
+  }
+
+  .laser-beam + .laser-beam {
+    left: calc(50% - 20px); /* Adjust the spacing between laser beams *//*
+  }*/
+
+  @keyframes engineAnimation {
+    to {
+      box-shadow: 0 0 20px 10px rgba(0, 255, 255, 0.5); /* Cyan hue shadow */
+    }
+  }
+
+
+  @keyframes moveStarDestroyer {
+    0% {
+      transform: translateY(200vh);
+    }
+    100% {
+      transform: translateY(-200vh);
+    }
+  }
+
+  /* Additional Star Destroyer instances with different animation delays */
+  .star-destroyer:nth-child(2) {
+    animation-delay: 2s; /* Adjust the delay as needed */
+    margin-left: 400px; /* Adjust the spacing as needed */
+  }
+
+  .star-destroyer:nth-child(3) {
+    animation-delay: 4s; /* Adjust the delay as needed */
+    margin-left: 200px; /* Adjust the spacing as needed */
+  }
+
+  .star-destroyer:nth-child(4) {
+    animation-delay: 6s;
+    margin-left: 600px; /* Adjust the spacing as needed */
+    margin-bottom: 600px; /* Adjust the spacing as needed */
+  }
+
+  .star-destroyer:nth-child(5) {
+    animation-delay: 8s;
+    margin-left: 600px; /* Adjust the spacing as needed */
+    margin-bottom: 600px; /* Adjust the spacing as needed */
+  }
+
+
+  /* @keyframes laserAnimation {
+    to {
+      transform: translateX(-50%) translateY(-500px); /* Move the laser beams upward *//*
+    }
+  } */
+
+  

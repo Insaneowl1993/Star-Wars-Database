@@ -1,0 +1,50 @@
+.deathStar{
+    left: 80vw;
+    top: 40vh;
+    background: #323232;
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border-radius: 150px;
+    overflow: hidden;
+    animation-name: bounce;
+    animation-duration:5s;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+  }
+  .deathStar:before{
+    content: "";
+    position: absolute;
+    background: #3b3b3b;
+    width: 150px;
+    height: 150px;
+    border-radius: 150px;
+    left: 6px;
+    top:-6px;
+  }
+  .circle{
+    background: #212121;
+    position: relative;
+    top:23px;
+    left: 30px;
+    width: 40px;
+    height: 40px;
+    border-radius: 40px;
+  }
+  .trait{
+    background: #212121;
+    position: relative;
+    top:40px;
+    width: 100%;
+    height: 3px;
+  }
+
+  @keyframes bounce {
+    from { 
+        transform: translateY(50px);
+    }
+
+    to{ transform: translateY(-50px);
+    }
+}
